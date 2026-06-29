@@ -1,0 +1,12 @@
+# Databricks
+.Trash/
+*.pyc
+__pycache__/
+
+# Power BI
+*.pbix.bak
+
+# Local secrets, just in case
+.env
+*.pem
+credentials.json

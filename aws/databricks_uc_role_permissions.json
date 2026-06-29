@@ -1,0 +1,52 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DatabricksVendorsS3Access",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:GetBucketLocation",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration"
+            ],
+            "Resource": [
+                "arn:aws:s3:::vendor-status-monitor",
+                "arn:aws:s3:::vendor-status-monitor/*"
+            ]
+        },
+        {
+            "Sid": "ManagedFileEvents",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketNotification",
+                "s3:PutBucketNotification",
+                "sqs:CreateQueue",
+                "sqs:DeleteQueue",
+                "sqs:SetQueueAttributes",
+                "sqs:GetQueueAttributes",
+                "sqs:GetQueueUrl",
+                "sqs:SendMessage",
+                "sqs:ReceiveMessage",
+                "sqs:DeleteMessage",
+                "sqs:TagQueue",
+                "sqs:ListQueues",
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:GetTopicAttributes",
+                "sns:SetTopicAttributes",
+                "sns:Subscribe",
+                "sns:Unsubscribe",
+                "sns:Publish",
+                "sns:TagResource",
+                "sqs:PurgeQueue",
+                "sns:ListSubscriptionsByTopic",
+                "sns:ListTopics"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

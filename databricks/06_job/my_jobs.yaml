@@ -1,0 +1,29 @@
+resources:
+  jobs:
+    Autoloader_Job:
+      name: Autoloader-Job
+      trigger:
+        pause_status: UNPAUSED
+        periodic:
+          interval: 10
+          unit: MINUTES
+      tasks:
+        - task_key: ingest_with_autoloader
+          notebook_task:
+            notebook_path: /Workspace/Users/vigneshsn23@outlook.com/SaaS-Dependency-Health-Dashboard/databricks/01_bronze/bronze_autoloader
+            source: WORKSPACE
+        - task_key: process_data
+          depends_on:
+            - task_key: ingest_with_autoloader
+          notebook_task:
+            notebook_path: /Workspace/Users/vigneshsn23@outlook.com/SaaS-Dependency-Health-Dashboard/databricks/02_silver/silver_components
+            source: WORKSPACE
+        - task_key: insights_from_data
+          depends_on:
+            - task_key: process_data
+          notebook_task:
+            notebook_path: /Workspace/Users/vigneshsn23@outlook.com/SaaS-Dependency-Health-Dashboard/databricks/03_gold/gold_book
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
