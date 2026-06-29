@@ -2,7 +2,7 @@
 
 A near-real-time data pipeline that polls public status APIs of 6 SaaS vendors, detects status changes, and surfaces uptime/incident metrics — the kind of internal tool a platform/SRE team builds to track dependency health.
 
-![Dashboard](powerbi/snapshot/SaaS Status Dashboard.png)
+<img src="powerbi/snapshot/SaaS Status Dashboard.png" alt="Dashboard">
 
 ## Architecture
 
