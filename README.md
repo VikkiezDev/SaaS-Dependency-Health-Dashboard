@@ -1,4 +1,4 @@
-# SaaS-Dependency-Health-Dashboard
+# SaaS Dependency Health Dashboard
 
 A near-real-time data pipeline that polls public status APIs of 6 SaaS vendors, detects status changes, and surfaces uptime/incident metrics — the kind of internal tool a platform/SRE team builds to track dependency health.
 
